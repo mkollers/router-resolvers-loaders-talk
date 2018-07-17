@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
+import { LanguagesResolver } from './languages-resolver';
 import { LazyLoadedRoutingModule } from './lazy-loaded-routing.module';
 import { LazyLoadedComponent } from './lazy-loaded.component';
 
@@ -9,6 +10,9 @@ import { LazyLoadedComponent } from './lazy-loaded.component';
     CommonModule,
     LazyLoadedRoutingModule
   ],
-  declarations: [LazyLoadedComponent]
+  declarations: [LazyLoadedComponent],
+  providers: [
+    LanguagesResolver
+  ]
 })
 export class LazyLoadedModule { }
