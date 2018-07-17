@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-lazy-loaded',
@@ -9,11 +7,9 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./lazy-loaded.component.css']
 })
 export class LazyLoadedComponent {
-  languages$: Observable<any[]>;
+  languages: any;
 
   constructor(route: ActivatedRoute) {
-    this.languages$ = route.data.pipe(
-      map(data => data.languages as any[])
-    );
+    this.languages = route.snapshot.data.languages as any[];
   }
 }
